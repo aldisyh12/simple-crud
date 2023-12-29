@@ -516,6 +516,47 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Upload Photo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file[]",
+							"type": "file",
+							"src": "/Users/dev_pgi/Downloads/510a83f56bb3f70747000023.webp"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{urls}}/api/v1/galery/create",
+					"host": [
+						"{{urls}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"galery",
+						"create"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
