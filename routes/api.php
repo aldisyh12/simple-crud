@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -50,6 +51,13 @@ Route::group(['prefix' => 'v1'], function () {
             Route::get('/show/{id}', [CategoryController::class, 'show']);
             Route::post('/update/{id}', [CategoryController::class, 'update']);
             Route::delete('/delete/{id}', [CategoryController::class, 'delete']);
+        });
+
+        /**
+         * Galery Controller
+         */
+        Route::group(['prefix' => 'galery'], function (){
+            Route::post('/create', [GalleryController::class, 'uploadPhoto']);
         });
     });
 });
